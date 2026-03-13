@@ -46,15 +46,6 @@ CoreAdmin is a modern, responsive admin dashboard template built with Tailwind C
 
 ---
 
-## Screenshots
-
-<div style="display: flex; gap: 20px; flex-wrap: wrap;">
-  <img src="screenshots/dashboard-day-mode.png"alt="Day Mode" width="45%">
-  <img src="screenshots/dashboard-night-mode.png" alt="Night Mode" width="45%">
-</div>
-
----
-
 ## License
 This template is for personal and commercial use. See `LICENSE.txt` for details.
 
