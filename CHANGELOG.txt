@@ -1,0 +1,23 @@
+CHANGELOG - CoreAdmin Template
+
+Version 1.0
+------------
+Initial release
+
+- Core dashboard with overview statistics
+- Analytics page with charts and data visualization
+- Customers management page
+- Orders tracking page
+- Products inventory page
+- Invoices generation and listing
+- Calendar with event management
+- Messages/Notifications system
+- Settings page with preferences
+- Help Center with FAQ
+- Authentication pages (Login, Register, Forgot Password)
+- Fully responsive layout for all devices
+- Dark mode support with toggle
+- Pre-built components and UI elements
+- Clean and modern TailwindCSS design
+- Chart.js integration for data visualization
+- Heroicons for icons

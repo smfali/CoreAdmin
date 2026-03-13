@@ -1,0 +1,27 @@
+CREDITS - CoreAdmin Template
+
+This template uses the following open-source libraries and resources:
+
+TailwindCSS
+-----------
+Website: https://tailwindcss.com
+License: MIT License
+Description: A utility-first CSS framework for rapidly building custom designs.
+
+Chart.js
+--------
+Website: https://www.chartjs.org
+License: MIT License
+Description: Simple yet flexible JavaScript charting library for designers and developers.
+
+Heroicons
+---------
+Website: https://heroicons.com
+License: MIT License
+Description: Beautiful hand-crafted SVG icons by the makers of Tailwind CSS.
+
+---
+
+Thank you to all the open-source community for making these resources available.
+
+CoreAdmin Template - &copy; 2026 All Rights Reserved

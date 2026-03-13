@@ -1,0 +1,759 @@
+/* ============================================
+   TailAdmin - Main Stylesheet
+   Version: 1.0.0
+   ============================================ */
+
+/* ============================================
+   1. Base Styles & Typography
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F8FAFC;
+    color: #1E293B;
+    line-height: 1.6;
+}
+
+/* ============================================
+   2. Custom Scrollbar
+   ============================================ */
+
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ============================================
+   3. Sidebar Styles
+   ============================================ */
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: #64748B;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+    color: #1E293B;
+    border-left: 3px solid #3B82F6;
+}
+
+.sidebar-link.active {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+    color: #1E293B;
+    border-left: 3px solid #3B82F6;
+}
+
+/* ============================================
+   4. Card Styles
+   ============================================ */
+
+.stat-card {
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   5. Form Styles
+   ============================================ */
+
+/* Input Error States */
+.input-error {
+    border-color: #EF4444 !important;
+}
+
+.input-error:focus {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.error-message {
+    display: none;
+}
+
+.input-error + .error-message {
+    display: block;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.active {
+    background-color: #3B82F6;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch.active::after {
+    transform: translateX(24px);
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #E2E8F0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.custom-checkbox.checked {
+    background-color: #3B82F6;
+    border-color: #3B82F6;
+}
+
+.custom-checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Custom Radio */
+.custom-radio {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #E2E8F0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.custom-radio.checked {
+    border-color: #3B82F6;
+}
+
+.custom-radio.checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #3B82F6;
+    border-radius: 50%;
+}
+
+/* ============================================
+   6. Table Styles
+   ============================================ */
+
+.table-container {
+    overflow-x: auto;
+}
+
+.table-container table {
+    min-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .table-container table {
+        min-width: 100%;
+    }
+}
+
+/* ============================================
+   7. Tooltip Styles
+   ============================================ */
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1E293B;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    margin-bottom: 8px;
+    z-index: 1000;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============================================
+   8. Modal Styles
+   ============================================ */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   9. Tab Styles
+   ============================================ */
+
+.tab-btn {
+    position: relative;
+    color: #64748B;
+    transition: all 0.2s;
+    padding-bottom: 0.75rem;
+}
+
+.tab-btn.active {
+    color: #3B82F6;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #3B82F6;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================================
+   10. Notification Styles
+   ============================================ */
+
+.notification-item {
+    transition: all 0.2s;
+}
+
+.notification-item:hover {
+    background-color: #F8FAFC;
+}
+
+.notification-item.unread {
+    background-color: #EFF6FF;
+}
+
+/* ============================================
+   11. Calendar Styles
+   ============================================ */
+
+.calendar-day {
+    transition: all 0.2s;
+}
+
+.calendar-day:hover:not(.empty) {
+    background-color: #EFF6FF;
+    cursor: pointer;
+}
+
+.calendar-day.today {
+    background-color: #3B82F6;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day.has-event {
+    position: relative;
+}
+
+.calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #10B981;
+    border-radius: 50%;
+}
+
+.calendar-day.today.has-event::after {
+    background-color: white;
+}
+
+/* ============================================
+   12. Sparkline Chart Styles
+   ============================================ */
+
+#sparkline1, 
+#sparkline2, 
+#sparkline3, 
+#sparkline4, 
+#sparkline5, 
+#sparkline6 {
+    height: 40px !important;
+    width: 100% !important;
+}
+
+/* ============================================
+   13. Floating Shapes (404 Page)
+   ============================================ */
+
+.floating-shapes {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+    top: -100px;
+    right: -100px;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+    bottom: -50px;
+    left: -50px;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+    top: 50%;
+    right: -75px;
+}
+
+/* ============================================
+   14. Utility Classes
+   ============================================ */
+
+/* Success Message */
+.success-message {
+    display: none;
+}
+
+.success-message.active {
+    display: block;
+}
+
+/* Chart Container */
+.chart-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* ============================================
+   15. Responsive Utilities
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   16. Animation Utilities
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ============================================
+   17. Print Styles
+   ============================================ */
+
+@media print {
+    .sidebar,
+    header,
+    .no-print {
+        display: none !important;
+    }
+    
+    main {
+        padding: 0;
+    }
+}
+
+/* ============================================
+   18. Global Dark Mode Styles
+   ============================================ */
+
+/* Dark mode root variables */
+.dark {
+    --bg-primary: #0F172A;
+    --bg-secondary: #1E293B;
+    --bg-card: #1E293B;
+    --bg-light: #334155;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border-color: #334155;
+    --link-color: #60A5FA;
+    --link-hover: #3B82F6;
+}
+
+/* Apply dark mode when html has 'dark' class */
+html.dark body,
+html.dark {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Headings in dark mode */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+    color: #E5E7EB !important;
+}
+
+/* Paragraphs and span text in dark mode */
+html.dark p,
+html.dark span,
+html.dark li,
+html.dark label {
+    color: var(--text-secondary) !important;
+}
+
+/* Strong/bold text */
+html.dark strong,
+html.dark b {
+    color: #E5E7EB !important;
+}
+
+/* Links in dark mode */
+html.dark a:not(.btn):not(.sidebar-link) {
+    color: var(--link-color) !important;
+}
+
+html.dark a:not(.btn):not(.sidebar-link):hover {
+    color: var(--link-hover) !important;
+}
+
+/* Cards in dark mode */
+html.dark .bg-white,
+html.dark .bg-card,
+html.dark .card,
+html.dark [class*="card"] {
+    background-color: var(--bg-card) !important;
+}
+
+/* Light backgrounds in dark mode */
+html.dark .bg-light,
+html.dark .bg-gray-50,
+html.dark .bg-gray-100 {
+    background-color: var(--bg-light) !important;
+}
+
+/* Tables in dark mode */
+html.dark table,
+html.dark thead,
+html.dark tbody,
+html.dark tr,
+html.dark th,
+html.dark td {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+html.dark th {
+    color: #E5E7EB !important;
+    background-color: var(--bg-secondary) !important;
+}
+
+/* Form elements in dark mode */
+html.dark input,
+html.dark select,
+html.dark textarea {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Buttons in dark mode */
+html.dark .btn,
+html.dark button {
+    color: var(--text-primary) !important;
+}
+
+html.dark .btn-light,
+html.dark .btn-secondary {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Navigation in dark mode */
+html.dark nav,
+html.dark .nav,
+html.dark header,
+html.dark .header {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Sidebar in dark mode */
+html.dark aside,
+html.dark .sidebar {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Section backgrounds */
+html.dark section,
+html.dark .section {
+    background-color: var(--bg-primary);
+}
+
+/* Modals in dark mode */
+html.dark .modal-content,
+html.dark .modal-content {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary);
+}
+
+/* Dropdown menus */
+html.dark .dropdown-menu,
+html.dark .dropdown-content,
+html.dark [class*="dropdown"] {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Borders in dark mode */
+html.dark .border,
+html.dark [class*="border"] {
+    border-color: var(--border-color) !important;
+}
+
+/* Scrollbar in dark mode */
+html.dark ::-webkit-scrollbar-track {
+    background: #1E293B;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748B;
+}
+
+/* Badges in dark mode */
+html.dark .badge,
+html.dark [class*="badge"] {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tabs in dark mode */
+html.dark .tab-btn {
+    color: var(--text-muted) !important;
+}
+
+html.dark .tab-btn.active {
+    color: #60A5FA !important;
+}
+
+/* Calendar in dark mode */
+html.dark .calendar-day:not(.today):not(.empty) {
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+html.dark .calendar-day:hover:not(.empty) {
+    background-color: #334155;
+}
+
+/* Notification items */
+html.dark .notification-item:hover {
+    background-color: var(--bg-secondary) !important;
+}
+
+/* Footer in dark mode */
+html.dark footer,
+html.dark .footer {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-secondary);
+}
+
+/* Text utilities that need overriding */
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700,
+html.dark .text-dark {
+    color: #E5E7EB !important;
+}
+
+html.dark .text-gray-600,
+html.dark .text-gray-500,
+html.dark .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+html.dark .text-gray-400 {
+    color: var(--text-muted) !important;
+}
+
+/* Background utilities that need overriding */
+html.dark .bg-white {
+    background-color: var(--bg-card) !important;
+}
+
+html.dark .bg-gray-50 {
+    background-color: var(--bg-secondary) !important;
+}
+
+html.dark .bg-gray-100 {
+    background-color: var(--bg-light) !important;
+}
+
+html.dark .bg-gray-200 {
+    background-color: #475569 !important;
+}
+
+/* Border utilities that need overriding */
+html.dark .border-gray-200,
+html.dark .border-gray-300,
+html.dark .border-border {
+    border-color: var(--border-color) !important;
+}
+
+/* Hover states in dark mode */
+html.dark .hover\:bg-gray-50:hover,
+html.dark .hover\:bg-light:hover {
+    background-color: var(--bg-secondary) !important;
+}
+
+html.dark .hover\:bg-gray-100:hover {
+    background-color: #475569 !important;
+}

@@ -1,0 +1,29 @@
+CoreAdmin Template License
+
+Copyright (c) 2026 CoreAdmin
+
+TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION AND DISTRIBUTION
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this template software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+1. You MAY use this template for personal projects.
+2. You MAY use this template for commercial projects.
+3. You MAY modify this template to suit your needs.
+4. You MAY NOT redistribute, resell, or sublicense this template.
+5. You MAY NOT claim ownership of this template.
+6. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+By using this template, you agree to these terms and conditions.
+
+For questions about this license, please contact the template author.
