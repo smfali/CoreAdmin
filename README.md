@@ -42,12 +42,7 @@ CoreAdmin is a modern, responsive admin dashboard template built with Tailwind C
 1. Download the template
 2. Open `index.html` in your browser
 3. Customize it to fit your needs
-
-
----
-## Live Demo
-https://smfali.github.io/CoreAdmin/
----
+4. Optional: [Live Demo](https://smfali.github.io/CoreAdmin/)
 
 ## License
 This template is for personal and commercial use. See `LICENSE.txt` for details.
